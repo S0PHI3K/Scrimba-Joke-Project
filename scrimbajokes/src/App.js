@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/header";
+import Jokes from "./components/jokes";
+import jokesData from "./jokesData";
 
 function App() {
+  const jokeElements = jokesData.map(joke => {
+    return <Jokes setup={joke.setup} punchline={joke.punchline} />
+    })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Header />
+        <section className="jokeLists">
+        {jokeElements}
+        </section>
     </div>
+
   );
 }
 
