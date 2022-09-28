@@ -8,7 +8,7 @@ function App() {
     return <Jokes setup={joke.setup} punchline={joke.punchline} />
     })
   return (
-    <div>
+    <div className="container">
         <Header />
         <section className="jokeLists">
         {jokeElements}
